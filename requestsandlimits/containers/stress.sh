@@ -1,4 +1,4 @@
 #!/bin/bash 
 
-stress $ARGS
+stress-ng $ARGS
 
