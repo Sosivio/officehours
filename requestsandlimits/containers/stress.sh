@@ -1,4 +1,4 @@
 #!/bin/bash 
 
-stress-ng $ARGS
+python3 memeater.py -m $ARGS
 

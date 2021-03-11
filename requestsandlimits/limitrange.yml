@@ -9,3 +9,9 @@ spec:
     defaultRequest:
       memory: 256Mi
     type: Container
+  - max:
+      cpu: "2"
+      memory: "2Gi"
+  - maxLimitRequestRatio:
+      memory: 2
+    type: Pod
