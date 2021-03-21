@@ -1,0 +1,483 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sosivio Demo app {{ .AppVersion }}</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css
+">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<style>
+        #header span {
+            margin-right: 10px;
+            float: right;
+            line-height: 30px;
+        }
+        #header h1 {
+            margin: 0;
+            margin-left: 10px;
+            float: left;
+            min-height: 20px;
+        }
+
+        #header {
+            padding: 10px 0px;
+        }
+        #cart h2 {
+            margin: 3px;
+            width: 80%;
+            margin: 5px;
+            border-bottom: 1px; solid: #000;
+        }
+        #cart h1 {
+            margin: 8px;
+            width: auto;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .prdqty {
+            float: right;
+            width: 15%;
+            color: #000;
+            font-size: 16px;
+        }
+        #cart p {
+            display: none;
+        }
+        #cart .prdtitle {
+            clear: left;
+            width: 80%;
+            float: left;
+            color: #000;
+        }
+    #cart .pimg {
+            display: none;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    h1 .mdi {
+        float: left !important;
+        margin-right: 2px;
+    }
+    #catalog {
+        padding: 10px;
+        float: left;
+        clear: left;
+        width: 70%;
+    }
+    #cart {
+        background-color: #eee;
+        width: 25%;
+        min-height: 50px;
+        background-color: #b8c3d1;
+        margin: 10px;
+        clear: right;
+        float: right;
+        padding: 10px;
+        color: #fff;
+    }
+    #cart h1 {
+        text-align: center;
+        margin: 1px;
+    }
+    #header {
+        display: block;
+        color: #fff;
+        width: 100%;
+        margin: 0 auto;
+        min-height: 35px;
+        background-color: navy;
+        padding: 10px;
+    }
+    .pimg {
+        border: 1px solid #ddd;
+        float: left;
+        margin: 10px;
+        clear: left;
+        width: 237px;
+    }
+
+    #cart .pimg {
+        border: 1px solid #ddd;
+        float: left;
+        margin: 10px;
+        clear: left;
+        width: 80px;
+    }
+    #cart .pimg img {
+        width: 80px;
+    }
+
+    #cart h2 {
+        font-size: 12px;
+        color: #navy;
+    }
+    #cart .prdline {
+        border-bottom: 2px solid #acacac;
+    }
+    #cart .buynowbut {
+        display: none;
+    }
+    .prdline {
+        border: 1px solid #ddd;
+        width: 90%;
+        margin: 10px;
+        padding: 10px;
+        height: 237px;
+    }
+    .prdline:hover {
+        background-color: #eee;
+    }
+    .prdtitle {
+        float: left;
+        width: 60%;
+    }
+    .prdtitle h2 {
+        float: left;
+    }
+    .buynowbut {
+        float: right;
+        margin: 20px;
+        cursor: pointer;
+    }
+    .buynowbut img {
+        width: 150px;
+    }
+    #searchbox {
+        width: 90%;
+        float: left;
+        clear: left;
+        border-radius: 0px;
+        border: 1px solid #acacac;
+        padding: 2px;
+        margin: 2px;
+    }
+    #searchbox input {
+        width: 80%;
+        font-size: 25px;
+        border: 0;
+        font-size: 20px;
+        color: #acacac;
+    }
+    #rcrash {
+        position: fixed;
+        bottom: 0 ;
+        color: #fff;
+        background-color: navy;
+        padding: 5px;
+        text-align: center;
+        width:100%;
+    }
+    #randomcrash {
+        display: block;
+        margin: 10px 20px;
+        float: left;
+        color: navy;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 3px;
+        width: 150px;
+        text-decoration: none;
+    }
+
+    #memleak {
+        display: block;
+        margin: 10px 20px;
+        float: left;        
+        color: navy;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 3px;
+        width: 150px;
+        text-decoration: none;
+    }
+    #randomcrash:visited {
+        color: navy;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 3px;
+    }
+
+    .butbut {
+        display: block;
+        margin: 10px 20px;
+        float: left;        
+        color: navy;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 3px;
+        width: 150px;
+        text-decoration: none;
+    }
+
+    #bestatus {
+        background-color: #fff;
+        padding: 0 5px;
+    }
+    @media screen and (max-width: 800px) {
+        
+
+        
+        
+        
+        #cart {
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            display: block;
+            float: none; 
+            clear: both;
+         }
+         #catalog {
+             margin: 0 auto;
+             display: block;
+             float: none;
+             width: 95%;
+         }
+         .pimg {
+             width: 30%;
+             border: none;
+         }
+         .pimg img {
+             width: 90%;
+         }
+         .prdtitle h2 {
+             font-size: 12px;
+             
+         }
+         p {
+             margin: 2px;
+         }
+
+         .prdline {
+             height: 180px;
+         }
+         #searchbox {
+             margin: 5px auto;
+             display: block;
+             float: none;
+         }
+    }
+</style>
+</head>
+<body>
+<div id='header'>
+    <h1><span class="mdi mdi-compass"></span>
+Sbay</h1><span>BE status:<span id='bestatus'></span></span>
+</div>
+<div id='searchbox'><input id='searchtest' type='text' value='Search' /></div>
+
+<div id='cart'>
+    <h1><span class="mdi mdi-cart">cart</h1>
+    <div class='prdtitle'><h2>Product</h2></div><div class='prdqty'>Qty</div>
+</div>
+<div id='catalog'>
+    {{range $index, $value := .Products}}
+            <div id="product{{ $index }}" class="prdline">
+                <div class='pimg'><img src="{{.Image}}"></div>
+                <div class='prdtitle'>
+                    <h2>{{.Title}}</h2>
+                    <p>Free International</p>
+                    <p>ShippingFree Return</p>
+                    <div class='buynowbut'>
+                        <img class='bbt' id="prd{{ $index }}" src='assets/img/buynow.png' />
+                    </div>
+                </div>
+            </div>
+    {{end}}
+</div>
+
+<div id='rcrash' style='display: none;'>
+    <a class='butbut' id='randomcrash' href='javascript:void(0);'>Random Crash</a>
+    <a class='butbut' id='memleak' href='javascript:void(0);'>Cause Mem leak</a>
+    <a class='butbut' id='crashbe' href='javascript:void(0);'>Crash BE</a>
+</div>
+<script type='text/javascript'>
+    var prdcount=0;
+    var counterMap = {}
+    best=setInterval(beping,500);
+    $(".bbt").click(function() {
+        var foundincart=0;
+        beping();
+        oo=this.id;
+        prd=oo.replace("prd","")
+        console.log("Click on " + prd);
+        if (counterMap[prd] == null){
+            counterMap[prd] = 1
+        } else {
+            counterMap[prd]++
+        }
+        console.log("Counter: " + counterMap[prd]);
+        if (counterMap[0] == 3 && counterMap[2] == 3 &&
+             (prd == 0 || prd == 2)){
+            console.log("Start highmem");
+            highmem();
+        } else if (counterMap[1] == 3 && counterMap[3] == 3 &&
+             (prd == 1 || prd == 3)){
+            console.log("Start crashbe");
+            crashbe();
+        }
+        // if(prd==1) {
+        //     prdcount++;
+        //     console.log("adding prd kill");
+        //     if (prdcount>4) {
+        //         prdcount=0;
+        //          memleak();
+        //          console.log("KILL");
+        //     }
+        // }
+        $( "#cart .prdqty" ).each(function( index ) {
+            ocoo=this.id
+            // console.log("click on " + ocoo);
+            oco=ocoo.replace('prdqty','');
+           // console.log(prd+" --- "+oco)
+
+            if (oco==prd) {
+                // qty=$("#cart #prdqty"+oco).html();
+                // qty=qty*1;
+                $("#cart #prdqty"+oco).html(counterMap[oco]);
+                foundincart=1;
+                //Scenario cases:
+                //Memory leak:
+                // if (oco==0 && qty>2) {
+                //     console.log("Start highmem");
+                //     highmem();
+                // } else if (oco==1 && qty>2) {
+                //     console.log("Start crashbe");
+                //     crashbe();
+                // }
+            }
+        });
+        if (foundincart==0){
+            $("#cart").append("<div id='cartp"+prd+"'>"+$("#product"+prd).html()+"<div class='prdqty' id='prdqty"+prd+"'>1</div></div>")
+        };
+        $("html, body").animate({
+            scrollTop: 0
+        }, 500);
+        /* $.ajax('/jquery/submitData', {
+            type: 'POST',  // http method
+            data: { myData: 'This is my data.' },  // data to submit
+            success: function (data, status, xhr) {
+                $('p').append('status: ' + status + ', data: ' + data);
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                    $('p').append('Error' + errorMessage);
+            }
+        });*/
+    })
+    $("#searchtest").click(function(){
+        $(this).val("");
+    });
+    $("#searchtest").keyup(function(){
+        oo=$(this).val();
+        $(".prdline").hide();
+        $( ".prdline:contains('"+oo+"')" ).show();
+        if (oo=="crasheme") {
+            memleak();
+        }
+    })
+
+    $(".butbut").click(function(){
+        $(this).css("background-color","#acacac");
+    })
+
+    $("#randomcrash").click(function() {
+        setTimeout(memleak,5000);
+    })
+    
+    $("#crashbe").click(function() {
+        crashbe();
+    })
+
+    $("#memleak").click(function() {
+        highmem();
+    })
+
+    $("#cpuhog").click(function() {
+        cpuhog();
+    })
+
+    function beping() {
+        console.log("Going to ping");
+        $.ajax('/beping', {
+            type: 'POST',  // http method
+            data: { myData: 'beping' },  // data to submit
+            success: function (data, status, xhr) {
+                
+                    $("#bestatus").html("OK");
+                    $("#bestatus").css("color","green");
+                    document.removeEventListener('click', handler,true)
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                $("#bestatus").html("Error");
+                $("#cart").empty();
+                    $("#bestatus").css("color","red");
+                    document.addEventListener("click",handler,true);
+            }
+        });
+    }
+
+    function memleak() {
+        prdcount=0;
+        console.log("crashing");
+        $.ajax('/memleak', {
+            type: 'POST',  // http method
+            data: { myData: 'crash app.' },  // data to submit
+            success: function (data, status, xhr) {
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+            }
+        });
+    }
+
+    function highmem() {
+        console.log("High mem");
+        $.ajax('/highmem', {
+            type: 'POST',  // http method
+            data: { myData: 'cause memory leak.' },  // data to submit
+            success: function (data, status, xhr) {
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+            }
+        });
+    }
+
+    function cpuhog() {
+        console.log("High mem");
+        $.ajax('/cpuhog', {
+            type: 'POST',  // http method
+            data: { myData: 'cause cpu hog.' },  // data to submit
+            success: function (data, status, xhr) {
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+            }
+        });
+    }
+
+    function crashbe() {
+        console.log("Crash be");
+        $.ajax('/scenario3', {
+            type: 'POST',  // http method
+            data: { myData: 'Crash BE.' },  // data to submit
+            success: function (data, status, xhr) {
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+            }
+        });
+    }
+
+    function handler(e){
+                        
+        e.stopPropagation();
+        e.preventDefault();
+    }
+
+</script>
+
+</body>
+</html>
