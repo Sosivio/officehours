@@ -48,13 +48,34 @@ items:
           image: release.sosiv.io/demoapp:v1.13
           imagePullPolicy: Always
           name: demoapp
+          startupProbe:
+          livenessProbe:
+            exec:
+              command:
+              - pidof goapp
+            failureThreshold: 1
+            initialDelaySeconds: 1
+            periodSeconds: 1
+            successThreshold: 1
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet:
+              path: /ping
+              port: 8088
+            failureThreshold: 1
+            initialDelaySeconds: 1
+            periodSeconds: 1
+            successThreshold: 1
+            timeoutSeconds: 2
           readinessProbe:
             httpGet:
               path: /ping
               port: 8088
-            initialDelaySeconds: 3
-            periodSeconds: 1
-            periodSeconds: 1
+            failureThreshold: 5
+            initialDelaySeconds: 10
+            periodSeconds: 3
+            successThreshold: 1
+            timeoutSeconds: 3
           ports:
           - containerPort: 8088
             protocol: TCP
@@ -160,6 +181,23 @@ items:
               httpHeaders:
             initialDelaySeconds: 3
             periodSeconds: 1
+          livenessProbe:
+            failureThreshold: 1
+            tcpSocket:
+              port: 8088
+            periodSeconds: 1
+            successThreshold: 1
+            timeoutSeconds: 1
+          startupProbe:
+            exec:
+              command:
+              - pidof
+              - be
+            failureThreshold: 3
+            initialDelaySeconds: 120
+            periodSeconds: 1
+            successThreshold: 1
+            timeoutSeconds: 1
           ports:
           - containerPort: 8088
             protocol: TCP
