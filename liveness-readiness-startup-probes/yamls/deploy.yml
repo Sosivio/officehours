@@ -45,15 +45,16 @@ items:
             value: "8088"
           - name: DEMOAPP_BE_URL
             value: "http://demoapp-be:8088"
-          image: release.sosiv.io/demoapp:v1.13
+          image: release.sosiv.io/demoapp:v1.15
           imagePullPolicy: Always
           name: demoapp
           startupProbe:
-          livenessProbe:
+          startupProbe:
             exec:
               command:
-              - pidof goapp
-            failureThreshold: 1
+              - pidof
+              - goapp
+            failureThreshold: 60
             initialDelaySeconds: 1
             periodSeconds: 1
             successThreshold: 1
@@ -171,7 +172,7 @@ items:
         - env:
           - name: API_PORT
             value: "8088"
-          image: release.sosiv.io/demoapp-be:v1.14
+          image: release.sosiv.io/demoapp-be:v1.15
           imagePullPolicy: Always
           name: demoapp-be
           readinessProbe:
@@ -185,11 +186,10 @@ items:
             successThreshold: 1
             timeoutSeconds: 1
           livenessProbe:
-            failureThreshold: 1
             tcpSocket:
               port: 8088
             failureThreshold: 3
-            initialDelaySeconds: 2
+            initialDelaySeconds: 120
             periodSeconds: 1
             successThreshold: 1
             timeoutSeconds: 1
@@ -198,8 +198,8 @@ items:
               command:
               - pidof
               - be
-            failureThreshold: 3
-            initialDelaySeconds: 120
+            failureThreshold: 120
+            initialDelaySeconds: 5
             periodSeconds: 1
             successThreshold: 1
             timeoutSeconds: 1
