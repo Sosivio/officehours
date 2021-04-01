@@ -8,3 +8,6 @@ Every 2 weeks there will be an office hours K8s related session and the content 
 
 Our sessions are also recorded and uploaded onto our [youtube channel](https://www.youtube.com/channel/UC8w-LmiuhQSfmPMRud6qGJw), Make sure you subscribe!
 
+
+Sosivio [Linkedin](https://www.linkedin.com/company/sosivio/mycompany/) | [Youtube](https://www.youtube.com/channel/UC8w-LmiuhQSfmPMRud6qGJw) |[email](mailto: info@sosiv.io)
+
