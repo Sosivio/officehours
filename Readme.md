@@ -1,5 +1,7 @@
 # Sosivio office hours
 
+![Sosivio](https://www.sosiv.io/images/logo.png)
+
 The sosivio office hours repository.
 
 Every 2 weeks there will be an office hours K8s related session and the content will be uploaded to this repo.
