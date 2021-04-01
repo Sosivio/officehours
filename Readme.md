@@ -12,3 +12,5 @@ Our sessions are also recorded and uploaded onto our [youtube channel](https://w
 Sosivio [Linkedin](https://www.linkedin.com/company/sosivio/mycompany/) | [Youtube](https://www.youtube.com/channel/UC8w-LmiuhQSfmPMRud6qGJw) | info@sosiv.io
 
 
+Sosivio is a member of the [CNCF](https://landscape.cncf.io/?selected=sosivio)
+
