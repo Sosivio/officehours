@@ -171,7 +171,7 @@ items:
         - env:
           - name: API_PORT
             value: "8088"
-          image: release.sosiv.io/demoapp-be:v1.13
+          image: release.sosiv.io/demoapp-be:v1.14
           imagePullPolicy: Always
           name: demoapp-be
           readinessProbe:
@@ -179,12 +179,17 @@ items:
               path: /ping
               port: 8088
               httpHeaders:
-            initialDelaySeconds: 3
+            failureThreshold: 2
+            initialDelaySeconds: 1
             periodSeconds: 1
+            successThreshold: 1
+            timeoutSeconds: 1
           livenessProbe:
             failureThreshold: 1
             tcpSocket:
               port: 8088
+            failureThreshold: 3
+            initialDelaySeconds: 2
             periodSeconds: 1
             successThreshold: 1
             timeoutSeconds: 1

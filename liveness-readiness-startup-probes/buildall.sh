@@ -7,11 +7,11 @@
 cd goapp 
 go build .
 chmod +x goapp
-$CE build -t release.sosiv.io/demoapp:$TAG .
-$CE push release.sosiv.io/demoapp:$TAG
+sudo $CE build -t release.sosiv.io/demoapp:$TAG .
+sudo $CE push release.sosiv.io/demoapp:$TAG
 
 cd ../be 
 go build .
 chmod +x be
-$CE build -t release.sosiv.io/demoapp-be:$TAG .
-$CE push release.sosiv.io/demoapp-be:$TAG
+sudo $CE build -t release.sosiv.io/demoapp-be:$TAG .
+sudo $CE push release.sosiv.io/demoapp-be:$TAG
